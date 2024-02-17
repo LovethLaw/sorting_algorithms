@@ -1,34 +1,34 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "sort.h"
-/**
- * selection_sort - select algorithm
- * @array: array to be sorted
- * @size: size of array
- */
 
+/**
+ * selection_sort - sorts an unordered array using selection sort algorithm
+ * @array: the array to be sorted
+ * @size: size of the array to be sorted
+ */
 void selection_sort(int *array, size_t size)
 {
-	int siz = size;
-	int i, j, min_value, temp;
+	int temp;
+	size_t i, j, min;
 
-	for (i = 0; i < siz - 1; i++)
+	for (i = 0; i < size - 1; i++)
 	{
-		min_value = i;
-		for (j = i + 1; j < siz; j++)
+		min = i;
+
+		for (j = i + 1; j < size; j++)
 		{
-			if (array[j] < array[min_value])
+			if (array[j] < array[min])
 			{
-				min_value = j;
+				min = j;
 			}
 		}
-		if (min_value != 1)
+
+		if (min != i)
 		{
+			/* swap elements */
 			temp = array[i];
-			array[i] = array[min_value];
-			array[min_value] = temp;
+			array[i] = array[min];
+			array[min] = temp;
 			print_array(array, size);
 		}
 	}
 }
-
