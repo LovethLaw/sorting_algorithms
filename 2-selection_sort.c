@@ -22,11 +22,13 @@ void selection_sort(int *array, size_t size)
 				min_value = j;
 			}
 		}
-
-		temp = array[i];
-		array[i] = array[min_value];
-		array[min_value] = temp;
-		print_array(array, size);
+		if (min_value != 1)
+		{
+			temp = array[i];
+			array[i] = array[min_value];
+			array[min_value] = temp;
+			print_array(array, size);
+		}
 	}
 }
 
