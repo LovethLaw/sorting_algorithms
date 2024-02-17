@@ -20,5 +20,8 @@ void print_array(const int *array, size_t size);
 void bubble_sort(int *array, size_t size);
 void selection_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
+int partition(int *array, int lower, int higher, int size);
+void set_pivot(int *array, int low, int high, int size);
+void quick_sort(int *array, size_t size);
 #endif
 
